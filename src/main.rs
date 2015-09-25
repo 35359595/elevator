@@ -4,7 +4,7 @@ fn main() {
 	let mut floors = String::new(); //number of flors in building
 	let mut your_floor = String::new(); //your flor u are on
 
-	//getting info form user
+		//getting info form user
 	
 	println!("Print number of flours in building:");
 
@@ -28,17 +28,20 @@ fn main() {
 		Err(_) => panic!("NaN"),
 		};
 
-	//calculating part "The Algorythm!"
+		//calculating part "The Algorythm!"
 
-	let perc = &floors / 2 % 100;
-	
-	//output results	
-
-	if your_floor == 1 {
-		println!("Your chance is: {}%", (&perc * 2));
-		}
-	else {
+	if your_floor != 1 {
+		let perc = 1.0 / (floors % 100) as f32;
+		//output results	
 		println!("Your chance is: {}%", &perc);
-		}
+	}
+
+	else {
+		let perc = 1.0 * 2.0 / (floors % 100) as f32;
+		//output results	
+		println!("Your chance is: {}%", &perc);
+	}
 	
+
+
 }
