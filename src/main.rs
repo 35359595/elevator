@@ -30,18 +30,19 @@ fn main() {
 
 		//calculating part "The Algorythm!"
 
-	if your_floor != 1 {
-		let perc = 100.0 / (floors) as f32 / 2.0;
-		//output results	
-		println!("Your chance is: {}%", &perc);
-	}
+	match your_floor {
+		1 => {
+			let perc = 100.0 * (floors - 1) as f32 / floors as f32;
+			//output results	
+			println!("Your chance is: {}%", &perc);
+		},
 
-	else {
-		let perc = 100.0 * (floors - 1) as f32 / (floors) as f32;
-		//output results	
-		println!("Your chance is: {}%", &perc);
+		_ => {
+			let perc = 100.0 / floors as f32 / 2.0;
+			//output results	
+			println!("Your chance is: {}%", &perc);
+		},
 	}
-	
 
 
 }
